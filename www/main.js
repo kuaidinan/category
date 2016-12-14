@@ -7,7 +7,7 @@ var data=[
 	{category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
 	{category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
 ];
-//搜索条
+//搜索条组件
 var SearchBar=React.createClass({
 	handleChange:function(){
 		this.props.onUserInput(
@@ -112,7 +112,7 @@ var FilterableProductTable=React.createClass({
 	},
 	render:function(){
 		return (
-			<div>
+			<div style={this.css.style1}>
 				<SearchBar
 					onUserInput={this.handleUserInput}
 					filterText={this.state.filterText}
@@ -125,6 +125,15 @@ var FilterableProductTable=React.createClass({
 		)
 	}
 });
+
+FilterableProductTable.prototype.css={
+	style1:{
+		display:'flex',
+		'justifyContent':'center',
+		'alignItems':'center',
+		'flexDirection':'column'
+	}
+};
 
 ReactDOM.render(
 	<FilterableProductTable product={data}/>,
