@@ -5,6 +5,7 @@ node_modules/
 platforms/
 plugins/
 *.iml
+.idea
 .idea/*
 .idea/workspace.xml
 npm-debug.log.*
